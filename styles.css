@@ -1,0 +1,42 @@
+*{box-sizing:border-box}
+:root{--bg:#0b1220;--card:#131c2e;--card2:#1a2540;--fg:#e6edf7;--mut:#8b9ab5;--ac:#38bdf8;--ok:#34d399;--bad:#f87171;--warn:#fbbf24;--bd:#243049;--r:16px;color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6fb;--card:#fff;--card2:#eef2fa;--fg:#0f1a2e;--mut:#5d6b85;--ac:#0284c7;--ok:#059669;--bad:#dc2626;--warn:#b45309;--bd:#dde3ef}}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+#app{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;max-width:720px;margin:auto}
+header.top{display:flex;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top)) 16px 8px}
+header.top h1{font-size:20px;margin:0;flex:1}
+main#view{flex:1;padding:8px 16px 96px;display:grid;gap:14px;align-content:start}
+nav.tabs{position:fixed;bottom:0;left:0;right:0;max-width:720px;margin:auto;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs button{flex:1;background:none;border:0;color:var(--mut);padding:10px 4px 8px;font-size:12px;display:grid;gap:2px;justify-items:center;cursor:pointer}
+nav.tabs button span.i{font-size:20px}
+nav.tabs button[aria-current=page]{color:var(--ac);font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:14px}
+.card h2{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);margin:0 0 10px;font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card2);border-radius:12px;padding:10px 12px}.stat small{color:var(--mut);display:block}.stat b{font-size:20px}
+.in{color:var(--ok)}.out{color:var(--bad)}.mut{color:var(--mut)}.warn{color:var(--warn)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.row:last-child{border-bottom:0}.row .grow{flex:1;min-width:0}.row .grow div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row small{color:var(--mut)}
+input,select,button,textarea{font:inherit;color:var(--fg)}
+input,select{width:100%;background:var(--card2);border:1px solid var(--bd);border-radius:10px;padding:11px 12px;min-height:44px}
+input[type=checkbox]{width:22px;height:22px;min-height:0;accent-color:var(--ac)}
+label{display:grid;gap:4px;font-size:13px;color:var(--mut)}
+form.f{display:grid;gap:10px}
+.btn{background:var(--ac);color:#04121f;border:0;border-radius:10px;padding:11px 14px;min-height:44px;font-weight:600;cursor:pointer}
+.btn.g{background:var(--card2);color:var(--fg);border:1px solid var(--bd)}.btn.d{background:var(--bad);color:#fff}.btn.s{min-height:34px;padding:6px 10px;font-size:13px}
+.seg{display:flex;gap:6px}.seg label{flex:1}
+progress{width:100%;height:8px;border-radius:6px;appearance:none;-webkit-appearance:none;border:0;background:var(--card2)}
+progress::-webkit-progress-bar{background:var(--card2);border-radius:6px}
+progress::-webkit-progress-value{background:var(--ok);border-radius:6px}
+progress::-moz-progress-bar{background:var(--ok);border-radius:6px}
+progress.w::-webkit-progress-value{background:var(--warn)}progress.w::-moz-progress-bar{background:var(--warn)}
+progress.o::-webkit-progress-value{background:var(--bad)}progress.o::-moz-progress-bar{background:var(--bad)}
+.banner{margin:0 16px;padding:10px 14px;border-radius:12px;background:#3b2a05;border:1px solid var(--warn);color:#fde68a}
+@media (prefers-color-scheme:light){.banner{background:#fef3c7;color:#78350f}}
+.tag{font-size:11px;border-radius:9px;padding:2px 7px;background:var(--card2);color:var(--mut);margin-left:6px}
+.tag.t{background:var(--warn);color:#000}.tag.o{background:var(--bad);color:#fff}
+.month{display:flex;align-items:center;justify-content:space-between}.month b{font-size:17px}
+details.card summary{cursor:pointer;font-weight:600;list-style:none}details.card[open] summary{margin-bottom:12px}
+.auth{margin:auto;width:min(420px,92vw);display:grid;gap:14px;padding:24px 0}
+.auth h1{margin:0}.err{color:var(--bad);min-height:1.2em}
